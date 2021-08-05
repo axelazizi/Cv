@@ -2,104 +2,79 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="Ce site est le site oficiel de Axel AZIZI le devloppeur milionaire qui  habite a monaco ,j'ai 26 ans originaire de setif algerie"
-    />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Axel's Personal Site</title>
+    <title>Axel Azizi Personal Site</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="img/AxelPolugone.png" />
+    <!--Permet de faire apparaitre licone dans le navigateur -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- importing font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap"
+      rel="stylesheet"
+    />
   </head>
-
   <body>
-    <table cellspacing="20">
-      <tr>
-        <td>
-          <a href="img/axelazizi.png" download
-            ><img style="width: 250px; height: 250px" src="img\axelazizi.png" alt="Axel Aizi Picture"
-          /></a>
-        </td>
-        <td>
-          <h1>Axel AZIZI</h1>
-          <p>
-            <em>Tisch University <strong>Professor</strong></em>
+    <div class="top-container">
+      <img class="img-top-right" src="img/cloud.png" alt="cloud-image" />
+      <h1>I'm Axel Azizi</h1>
+      <h2>
+        <span class="under">Web</span> and <span class="under">Logo</span><br />
+        Designer
+      </h2>
+      <img class="img-bottom-left" src="img/cloud.png" alt="cloud-image" />
+      <img class="mountain-img" src="img/mountain.png" alt="mountain-image" />
+    </div>
+    <div class="middle-container">
+      <div class="profile">
+        <img src="img/axelazizi.png" alt="axelazizi-img" />
+        <h2>Axel AZIZI.</h2>
+        <p>
+          Je suis web devloppeur et specialiste en web design et en logo design depuis 2020 ,<br> diplomé de luniversite de Farhat abbas setif
+        </p>
+      </div>
+      <hr />
+      <div class="skills">
+        <h2>My Skills.</h2>
+        <div class="skill-row">
+          <img
+            class="skill-webdev"
+            src="https://image.flaticon.com/icons/png/512/1336/1336494.png"
+            alt="webd-evlopment-icon"
+          />
+          <h3>Web Devloppement</h3>
+          <p class="webdev-p">
+            Devloppeur web avec les technologie HTML CSS et Wordpress, je cree des site web moderne et responsive
+            en utilisant la methode UX design
           </p>
+        </div>
+        <div class="skill-row">
+          <img class="skill-logodes" src="img/logo-design.png" alt="logoDesign-icon" />
+          <h3>Logo Design</h3>
           <p>
-            I am an <a href="https://axelazizip.000webhostapp.com" target="_blank">web</a> and logo designer
-            .Freelancer at Freelancer since 2020 as today
+            Createur de logo Professionel Avec l'outil adobe illustrator, je creer differents type de logos
+            minimalist, moderne, chic ... j'ai debuté le design en 2019
           </p>
-        </td>
-      </tr>
-    </table>
+        </div>
+      </div>
+      <hr />
+      <div class="contact-me">
+        <h2>Get In Touch</h2>
+        <h3>Si vous etes interesse par mes creations.</h3>
+        <p>envoyer moi un email pour en parler , il suffit juste de cliquer sur Contact me.<br> ne soit pas timide aller appuis tout de suite</p>
+        <a class="btn" href="mailto:axelazizi17@gmail.com">CONTACT ME</a>
+      </div>
+    </div>
 
-    <hr size="3" noshade />
-    <h3>Books and teaching</h3>
-    <ul>
-      <li>Bachaloreat in 2017</li>
-      <li>Licence in informatique in 2020</li>
-      <li>Wordpress Freelancer at Freehali</li>
-    </ul>
-    <hr size="3" noshade />
-    <h3>Work Experiences</h3>
-    <table border="1px">
-      <thead>
-        <tr>
-          <th>Dates</th>
-          <th>Work</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>2017-2018</td>
-          <td>Certificat de bachaloreat Matheleme mension bien .</td>
-        </tr>
-        <tr>
-          <td>2019-2020</td>
-          <td>Certificat de licence informatique Frahat abbas setif</td>
-        </tr>
-      </tbody>
-      <tfoot></tfoot>
-    </table>
-    <hr size="3" noshade />
-    <h3>Skills</h3>
-    <table border="1px">
-      <tr>
-        <td>
-          <table cellspacing="10px">
-            <tr>
-              <td>Web design</td>
-              <td>⭐⭐⭐</td>
-            </tr>
-            <tr>
-              <td>Logo Design</td>
-              <td>⭐⭐⭐</td>
-            </tr>
-            <tr>
-              <td>Business Card Design</td>
-              <td>⭐⭐⭐⭐</td>
-            </tr>
-          </table>
-        </td>
-        <td>
-          <table cellspacing="10px">
-            <tr>
-              <td>Wordpress Elementor</td>
-              <td>⭐⭐⭐</td>
-            </tr>
-            <tr>
-              <td>Java</td>
-              <td>⭐⭐⭐</td>
-            </tr>
-            <tr>
-              <td>Photoshop</td>
-              <td>⭐</td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
-    <hr size="3" noshade />
-    <p><a href="hobies.html" target="_blank">Hobies</a></p>
-    <p><a href="contact.html" target="_blank">Contact me</a></p>
+    <div class="bottom-container">
+      <a class="footer-link" href="https://www.facebook.com/axel.achil.16/friends">Facebook</a>
+      <a class="footer-link" href="https://www.instagram.com/axel.achil/">Instagram</a>
+      <a class="footer-link" href="https://www.linkedin.com/in/axel-azizi-690840217/?originalSubdomain=dz"
+        >LinkedIn</a
+      >
+      <p>© 2021 Azizi Axel All Copyright reserved.</p>
+    </div>
   </body>
 </html>
