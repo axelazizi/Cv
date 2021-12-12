@@ -56,6 +56,7 @@
       scene.add(light4)
       scene.background = new THREE.Color("lightblue")
       camera.position.set(-10, 5, 4)
+      
 
       var controls = new THREE.OrbitControls(camera, renderer.domElement)
       controls.target.set(7, -2, -3)
@@ -63,43 +64,28 @@
 
       const domEvents = new THREEx.DomEvents(camera, renderer.domElement)
       var loadedScene
-      var table, chaise1, chaise2, chaise3, chaise4
       var livre1, livre2, livre3, livre4, livre5, mkhada, pot1, pot2, pot3, Veilleuse, tapi
+      
+      var table, chaise1,chaise2,chaise3,chaise4
       //var beakerSelected = false;
       var savedColor
       var objects = []
       var loader = new THREE.GLTFLoader()
-      loader.load("projetBedroom.gltf", function (gltf) {
+      loader.load("Table_chaise_Axelazizi.gltf", function (gltf) {
         loadedScene = gltf.scene
 
-        livre1 = loadedScene.getObjectByName("Livre1")
-        objects.push(livre1)
-        livre2 = loadedScene.getObjectByName("Livre2")
-        objects.push(livre2)
-        livre3 = loadedScene.getObjectByName("Livre3")
-        objects.push(livre3)
-        livre4 = loadedScene.getObjectByName("Livre4")
-        objects.push(livre4)
-        livre5 = loadedScene.getObjectByName("Livre5")
-        objects.push(livre5)
-        mkhada = loadedScene.getObjectByName("mkhada")
-        objects.push(mkhada)
+        
 
-        pot1 = loadedScene.getObjectByName("pot1")
-        objects.push(pot1)
-
-        pot2 = loadedScene.getObjectByName("pot2")
-        objects.push(pot2)
-
-        pot3 = loadedScene.getObjectByName("pot3")
-        objects.push(pot3)
-
-        Veilleuse = loadedScene.getObjectByName("Veilleuse")
-        objects.push(Veilleuse)
-
-        tapi = loadedScene.getObjectByName("tapi")
-        objects.push(tapi)
-
+        table = loadedScene.getObjectByName("table")
+        objects.push(table)
+        chaise1 = loadedScene.getObjectByName("chaise1")
+        objects.push(chaise1)
+        chaise2 = loadedScene.getObjectByName("chaise2")
+        objects.push(chaise2)
+        chaise3 = loadedScene.getObjectByName("chaise3")
+        objects.push(chaise3)
+        chaise4 = loadedScene.getObjectByName("chaise4")
+        objects.push(chaise4)
         scene.add(loadedScene)
       })
 
