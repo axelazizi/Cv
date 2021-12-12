@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bedroom Preject</title>
+  </head>
+  <body>
+    <!-- Three.js library -->
+    <script src="https://threejs.org/build/three.min.js"></script>
+    <!-- GLTFLoader.js source -->
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/loaders/GLTFLoader.js"></script>
+    <!-- <script src="three.js"></script> -->
+    <!-- <script src="GLTFLoader.js"></script> -->
+    <script src="OrbitControls.js"></script>
+    <script src="threex.domevents.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.115/examples/js/controls/DragControls.js"></script>
+
+    <script>
+      //creation de la scene
+      var scene = new THREE.Scene()
+
+      //Creation du render
+      var renderer = new THREE.WebGLRenderer({
+        antialias: true,
+        alpha: true,
+      })
+      renderer.physicallyCorrectLights = true
+      renderer.setClearColor(0xffffff, 1)
+      renderer.setSize(window.innerWidth, window.innerHeight)
+
+      //creation de la camera
+      var camera = new THREE.PerspectiveCamera(20, window.innerWidth / window.innerHeight, 0.9, 100)
+
+      //On ajoute l'objet à la page html
+      document.body.appendChild(renderer.domElement)
+
+      //light = new THREE.AmbientLight(0xffffff);
+      //scene.add(light);
+      const light1 = new THREE.PointLight()
+      const light2 = new THREE.PointLight()
+      const light3 = new THREE.PointLight()
+      const light4 = new THREE.PointLight()
+      light1.position.set(7, 8, -7)
+      light2.position.set(7, 8, 7)
+      light3.position.set(-4, 6, -10)
+      light4.position.set(-4, 6, 10)
+      light1.intensity = 30
+      light2.intensity = 30
+      light3.intensity = 5
+      light4.intensity = 5
+      scene.add(light1)
+      scene.add(light2)
+      scene.add(light3)
+      scene.add(light4)
+      scene.background = new THREE.Color("lightblue")
+      camera.position.set(-10, 5, 4)
+
+      var controls = new THREE.OrbitControls(camera, renderer.domElement)
+      controls.target.set(7, -2, -3)
+      controls.update()
+
+      const domEvents = new THREEx.DomEvents(camera, renderer.domElement)
+      var loadedScene
+      var table, chaise1, chaise2, chaise3, chaise4
+      var livre1, livre2, livre3, livre4, livre5, mkhada, pot1, pot2, pot3, Veilleuse, tapi
+      //var beakerSelected = false;
+      var savedColor
+      var objects = []
+      var loader = new THREE.GLTFLoader()
+      loader.load("projetBedroom.gltf", function (gltf) {
+        loadedScene = gltf.scene
+
+        livre1 = loadedScene.getObjectByName("Livre1")
+        objects.push(livre1)
+        livre2 = loadedScene.getObjectByName("Livre2")
+        objects.push(livre2)
+        livre3 = loadedScene.getObjectByName("Livre3")
+        objects.push(livre3)
+        livre4 = loadedScene.getObjectByName("Livre4")
+        objects.push(livre4)
+        livre5 = loadedScene.getObjectByName("Livre5")
+        objects.push(livre5)
+        mkhada = loadedScene.getObjectByName("mkhada")
+        objects.push(mkhada)
+
+        pot1 = loadedScene.getObjectByName("pot1")
+        objects.push(pot1)
+
+        pot2 = loadedScene.getObjectByName("pot2")
+        objects.push(pot2)
+
+        pot3 = loadedScene.getObjectByName("pot3")
+        objects.push(pot3)
+
+        Veilleuse = loadedScene.getObjectByName("Veilleuse")
+        objects.push(Veilleuse)
+
+        tapi = loadedScene.getObjectByName("tapi")
+        objects.push(tapi)
+
+        scene.add(loadedScene)
+      })
+
+      var dragControls = new THREE.DragControls(objects, camera, renderer.domElement)
+      dragControls.addEventListener("dragstart", function (event) {
+        controls.enabled = false
+        savedColor = event.object.material.color
+        event.object.material.color = new THREE.Color(1, 0, 0)
+      })
+      dragControls.addEventListener("dragend", function (event) {
+        event.object.material.color = savedColor
+        controls.enabled = true
+      })
+
+      animate()
+
+      function animate() {
+        requestAnimationFrame(animate)
+        controls.update()
+        renderer.render(scene, camera)
+      }
+    </script>
+  </body>
+</html>
