@@ -11,11 +11,17 @@ body{
     background-color: #d4d4d4;
     padding: 5%;
     text-align: center;
+    height:600px;
 }
 .ged img{
     width: 100%;
 }
- ul {
-    text-decoration: ; 
-
+ 
+.ged{
+    height: 100%;
+}
+.nomProjet{
+    font-family:'montserat' sans-serif ;
+    font-weight: bolder;
+    padding: 5% 5% 10%;
 }
